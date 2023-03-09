@@ -1,13 +1,14 @@
 public class DoorsFlipper {
+    private boolean closed = true;
     public DoorsFlipper(int i) {
 
     }
 
     public boolean isClosed(int i) {
-        return true;
+        return closed;
     }
 
     public void flipAll() {
-        throw new RuntimeException();
+        closed = false;
     }
 }
