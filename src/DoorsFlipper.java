@@ -12,8 +12,15 @@ public class DoorsFlipper {
         for (int i = 0; i < opened.length; i++) {
             opened[i] = !opened[i];
         }
-        for (int i = 1; i < opened.length; i++) {
+        for (int i = 1; i < opened.length; i+=2) {
             opened[i] = !opened[i];
         }
+        for (int i = 2; i < opened.length; i+=3) {
+            opened[i] = !opened[i];
+        }
+        for (int i = 3; i < opened.length; i+=4) {
+            opened[i] = !opened[i];
+        }
+
     }
 }
