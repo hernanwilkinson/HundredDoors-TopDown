@@ -1,7 +1,7 @@
 public class DoorsFlipper {
     private boolean opened[];
-    public DoorsFlipper(int i) {
-        opened = new boolean[i];
+    public DoorsFlipper(int numberOfDoors) {
+        opened = new boolean[numberOfDoors];
     }
 
     public boolean isClosed(int doorPosition) {
