@@ -10,8 +10,12 @@ public class DoorsFlipper {
 
     public void flipAll() {
         for (int i = 1; i <= opened.length; i++) {
-            for (int j = i-1; j < opened.length; j+=i)
-                opened[j] = !opened[j];
+            flipEvery(i);
         }
+    }
+
+    private void flipEvery(int i) {
+        for (int j = i -1; j < opened.length; j+= i)
+            opened[j] = !opened[j];
     }
 }
