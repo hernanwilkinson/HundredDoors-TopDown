@@ -26,4 +26,15 @@ public class HundredDoorsTest {
         assertFalse(doorsFlipper.isClosed(1));
         assertTrue(doorsFlipper.isClosed(2));
     }
+
+    @Test
+    public void shouldPassThroughDoorsWithStep() {
+        var doorsFlipper = new DoorsFlipper(4);
+        doorsFlipper.flipAll();
+
+        assertFalse(doorsFlipper.isClosed(1));
+        assertTrue(doorsFlipper.isClosed(2));
+        assertTrue(doorsFlipper.isClosed(3));
+        assertFalse(doorsFlipper.isClosed(4));
+    }
 }
