@@ -54,7 +54,7 @@ public class HundredDoorsTest {
                 IllegalArgumentException.class,
                 ()->doorsFlipper.isClosed(-1));
         assertEquals(DoorsFlipper.INVALID_DOOR_POSITION,exception.getMessage());
-        assertTrue(doorsFlipper.isClosed(0));
+        assertTrue(doorsFlipper.isClosed(1));
     }
 
 }
