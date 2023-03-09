@@ -14,8 +14,8 @@ public class DoorsFlipper {
         }
     }
 
-    private void flipEvery(int i) {
-        for (int j = i -1; j < opened.length; j+= i)
+    private void flipEvery(int step) {
+        for (int j = step -1; j < opened.length; j+= step)
             opened[j] = !opened[j];
     }
 }
