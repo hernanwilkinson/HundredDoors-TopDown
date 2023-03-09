@@ -9,9 +9,8 @@ public class DoorsFlipper {
     }
 
     public void flipAll() {
-        for (int i = 1; i <= opened.length; i++) {
-            flipEvery(i);
-        }
+        for (int step = 1; step <= opened.length; step++)
+            flipEvery(step);
     }
 
     private void flipEvery(int step) {
