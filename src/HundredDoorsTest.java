@@ -37,4 +37,13 @@ public class HundredDoorsTest {
         assertTrue(doorsFlipper.isClosed(3));
         assertFalse(doorsFlipper.isClosed(4));
     }
+
+    @Test
+    public void numberOfDoorsMustBeStrictlyPositive() {
+        var exception = assertThrows(
+                IllegalArgumentException.class,
+                ()->new DoorsFlipper(0));
+        assertEquals(DoorsFlipper.INVALID_NUMBER_OF_DOORS,exception.getMessage());
+    }
+
 }
