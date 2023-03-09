@@ -9,4 +9,12 @@ public class HundredDoorsTest {
 
         assertTrue(doorsFlipper.isClosed(1));
     }
+
+    @Test
+    public void shouldOpenFirstDoorWhenFlippingOneDoor() {
+        var doorsFlipper = new DoorsFlipper(1);
+        doorsFlipper.flipAll();
+
+        assertFalse(doorsFlipper.isClosed(1));
+    }
 }

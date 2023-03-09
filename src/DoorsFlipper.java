@@ -6,4 +6,8 @@ public class DoorsFlipper {
     public boolean isClosed(int i) {
         return true;
     }
+
+    public void flipAll() {
+        throw new RuntimeException();
+    }
 }
