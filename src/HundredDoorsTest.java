@@ -47,14 +47,24 @@ public class HundredDoorsTest {
     }
 
     @Test
-    public void doorPositionMustBePositive() {
+    public void doorPositionMustBeStrictlyPositive() {
         var doorsFlipper = new DoorsFlipper(1);
 
         var exception = assertThrows(
                 IllegalArgumentException.class,
-                ()->doorsFlipper.isClosed(-1));
+                ()->doorsFlipper.isClosed(0));
         assertEquals(DoorsFlipper.INVALID_DOOR_POSITION,exception.getMessage());
         assertTrue(doorsFlipper.isClosed(1));
     }
 
+    @Test
+    public void doorPositionMustLessOrEqualToNumberOfDoors() {
+        var doorsFlipper = new DoorsFlipper(1);
+
+        var exception = assertThrows(
+                IllegalArgumentException.class,
+                ()->doorsFlipper.isClosed(2));
+        assertEquals(DoorsFlipper.INVALID_DOOR_POSITION,exception.getMessage());
+        assertTrue(doorsFlipper.isClosed(1));
+    }
 }
