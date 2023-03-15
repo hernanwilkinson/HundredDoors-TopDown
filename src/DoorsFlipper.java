@@ -2,7 +2,7 @@ public class DoorsFlipper {
     public static final String INVALID_NUMBER_OF_DOORS = "Number of doors must be strictly positive";
     public static final String INVALID_DOOR_POSITION = "Door position must be between 1 and doors size";
 
-    private boolean opened[];
+    private boolean[] opened;
 
     public DoorsFlipper(int numberOfDoors) {
         assertValidNumberOfDoors(numberOfDoors);
@@ -11,7 +11,7 @@ public class DoorsFlipper {
     }
 
     private void assertValidNumberOfDoors(int numberOfDoors) {
-        if(numberOfDoors <1) throw new IllegalArgumentException(INVALID_NUMBER_OF_DOORS);
+        if(numberOfDoors < 1) throw new IllegalArgumentException(INVALID_NUMBER_OF_DOORS);
     }
 
     public boolean isClosed(int doorPosition) {
@@ -28,11 +28,11 @@ public class DoorsFlipper {
     }
 
     private void flipEvery(int step) {
-        for (int doorPosition = step -1; doorPosition < opened.length; doorPosition+= step)
-            flipAt(doorPosition);
+        for (int doorIndex = step-1; doorIndex < opened.length; doorIndex+= step)
+            flipAt(doorIndex);
     }
 
-    private void flipAt(int doorPosition) {
-        opened[doorPosition] = !opened[doorPosition];
+    private void flipAt(int doorIndex) {
+        opened[doorIndex] = !opened[doorIndex];
     }
 }
